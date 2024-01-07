@@ -18,7 +18,7 @@ class Twilio::SendSmsService
       )
       { status: true }
     rescue Twilio::REST::RestError => e
-      { status: false, msg: e.code == 21211 ? 'invalid' : "Twilio Error (#{e.message})"}
+      { status: false, msg: e.code == 21211 ? 'phone number is invalid!' : "Twilio Error: (#{e.message})"}
     end
   end
 end

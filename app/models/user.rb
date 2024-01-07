@@ -12,7 +12,7 @@ class User < ApplicationRecord
     response = Twilio::SendSmsService.new(phone_number, SIGN_UP_MSG).send_msg
 
     unless response.fetch(:status)
-      errors.add(:phone_number, response.fetch(:msg))
+      errors.add(:base, response.fetch(:msg))
       raise ActiveRecord::Rollback
     end
   end
