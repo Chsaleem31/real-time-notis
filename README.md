@@ -1,24 +1,47 @@
-# README
+# Real-time Notis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project constitutes a basic web application constructed utilizing Ruby on Rails 7.0 framework, leveraging PostgreSQL as its database management system.
 
-Things you may want to cover:
+Within this application, users can register by providing their phone numbers to receive SMS notifications based on specific triggers. Upon signup, users receive an initial SMS notification. Additionally, when users press two designated buttons on the homepage, the application triggers the sending of SMS messages containing different content. The integration of Twilio API facilitates the transmission of these SMS messages.
 
-* Ruby version
+# Features
 
-* System dependencies
+- devise gem for authentication with additional attribute name and phone number.
+- Real-time sms notification to specific triggers. (signup, two buttons provided on home page)
+- Twilio integration for sms sending service.
 
-* Configuration
+# Build With
 
-* Database creation
+- Framework: Ruby on Rails 7.0
+- Database: PostgreSQL
+- API: Twilio (gem twilio-ruby)
 
-* Database initialization
+# Getting Started
 
-* How to run the test suite
+## Prerequisites
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+  ```bash
+  brew install postgresql
+  \curl -sSL https://get.rvm.io | bash -s stable
+  rvm i 3.2.2
+  ```
 
-* ...
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Chsaleem31/real-time-notis.git
+   ```
+
+2. **Initialize the Database**:
+   - Before starting the application for the first time, ensure that the database is set up correctly.
+   ```bash
+   rails db:create db:migrate
+   ```
+   - Now run the application with
+   ```bash
+   rails s
+   visit the url localhost:3000
+   ```
+
