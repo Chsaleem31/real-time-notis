@@ -9,7 +9,7 @@ class User < ApplicationRecord
   private
 
   def send_welcome_sms
-    response = Twilio::SendSmsService.new(phone_number, "Hey #{name}, #{SIGN_UP_MSG}").send_msg
+    response = Twilio::SendSmsService.new(phone_number, SIGN_UP_MSG, name).send_msg
 
     unless response.fetch(:status)
       errors.add(:base, response.fetch(:msg))

@@ -1,11 +1,11 @@
 class Twilio::SendSmsService
-  attr_reader :message, :contact
+  attr_reader :message, :contact, :name
 
   DEFAULT_TWILIO_SENDER = '+16504601142'
 
-  def initialize(contact, message)
+  def initialize(contact, message, name)
     @contact = contact
-    @message = message
+    @message = "Hey #{name}, #{message}"
   end
 
   def send_msg
